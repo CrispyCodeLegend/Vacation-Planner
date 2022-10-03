@@ -1,3 +1,5 @@
+#Python Setup Link https://code.visualstudio.com/docs/python/python-tutorial
+
 import openai
 openai.api_key = "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"
 

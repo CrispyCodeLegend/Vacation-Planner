@@ -1,21 +1,12 @@
 #Python Setup Link https://code.visualstudio.com/docs/python/python-tutorial
-
+import os
 import openai
-openai.api_key = "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"
-
-# list engines
-engines = openai.Engine.list()
-
-# print the first engine's id
-print(engines.data[0].id)
-
-# create a completion
-completion = openai.Completion.create(engine="ada", prompt="Hello world")
-
-# print the completion
-print(completion.choices[0].text)
-
-def helloWorld(args):
-    print(args);
-    
-helloWorld("howdy");
+openai.api_key = "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"
+searchRequest ="Give me a list of Hotels in Cabo San Lucas, Mexico that cost less than $1000 per day and have a 4 star rating"
+response = openai.Completion.create(
+  model="text-davinci-002",
+  prompt=searchRequest,
+  max_tokens=256,
+  temperature=0.7
+)
+print(response)
